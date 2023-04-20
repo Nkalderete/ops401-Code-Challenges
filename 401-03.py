@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Nick Alderete
-# Worked with Sierra, Geneva and Justing H
+# Worked with Sierra, Geneva and Justin H
 
 
 # Uptime sensor pt. 2
