@@ -11,13 +11,11 @@ def write_key():
     key = Fernet.generate_key()
     with open("key.key", "wb") as key_file:
         key_file.write(key)
-
-
+        
 def load_key():
     with open("key.key", "rb") as key_file:
         key = key_file.read()
     return key
-
 
 # Write key and load key
 write_key()
@@ -66,9 +64,6 @@ def decrypt_folder(folder_path, key):
             decrypt_file(file_path, key)
     print("Your folder has been decrypted")
 
-
-
-
 # Main program loop
 while True:
     # Prompt user for mode selection
@@ -81,6 +76,7 @@ while True:
         "6": "Decrypt Folder",
         "7": "Exit"
     }
+    
     method_choice = input("Pick one of the following choices:\n 1) Encrypt file\n 2) Decrypt file\n 3) Encrypt message\n 4) Decrypt message\n 5) Encrypt folder\n 6) Decrypt folder\n 7) Exit\n")
     method = choices.get(method_choice)
 
