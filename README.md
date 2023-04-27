@@ -1,1 +1,1 @@
-# ops401-codechallenges
+# ops401-ops-challenges
