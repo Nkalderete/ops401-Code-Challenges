@@ -65,29 +65,6 @@ def IPsweep(ip):
     else:
         print(f"No response from {ip}")
 
-# Define the function to perform the ICMP ping sweep
-def Hostsweep(host):
-
-    # Get the IP address of the host
-    ip_address = socket.gethostbyname(host)
-    ip_network = ipaddress.ip_network(ip_address)
-    network_mask = ip_network.netmask
-
-    # Send an ICMP echo request packet and wait for a response
-    response = sr1(IP(dst=str(ip))/ICMP(), timeout=1, verbose=0)
-
-    # Check if a response was received
-    if response:
-        # Display the IP address and ICMP code
-        if response[ICMP].code == 3:
-            # Echo ICMP traffic is blocked by network
-            print(f"{ip}: ICMP traffic blocked by network")
-        else:
-            print(f"{ip}: {response[ICMP].code}")
-            print("The network mask is: " , network_mask)
-    else:
-        print(f"No response from {ip}")        
-
 # User menu
 while True:
     user = input("\nPlease select one of the following:\n1. Port Scanner\n2. ICMP Scanner\n3. Exit\n\n")
@@ -131,18 +108,13 @@ while True:
             print("Selected- IP")
             ip = input("\nPlease type an IP address:\n")
             IPsweep(ip)
-        # Host - Host name
-        print("Selected- Host")
-        if reply == "2":
-            host = input("\nPlease type host name:\n")
-            Hostsweep(host)
         # Nework - CIDR Block  
-        if reply == "3": 
+        if reply == "2": 
             print("Selected- Network")
             IPnetwork = input("\nPlease type a IP w/ CIDR:\n")
             sweep(IPnetwork)
 
-        if user.lower() == "4":
+        if user.lower() == "3":
             print("Exiting...")
             sys.exit()
 
