@@ -102,7 +102,7 @@ while True:
     if user == "2":
         print("Entering ICMP Scanner Mode\n")
         # Choices
-        reply = input("1. IP\n2. Host\n3. Network\n4. Exit \n\n")
+        reply = input("1. IP\n2. Network\n3. Exit \n\n")
         # IP - IP of the place you want to scan
         if reply == "1":
             print("Selected- IP")
