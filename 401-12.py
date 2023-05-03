@@ -94,14 +94,15 @@ while True:
 
     # Port scanner
     if user == "1":
+        print("Entering Port Scanner Mode\n")
         # Get the IP address of the target host from user input
-        ip_address = input("Please enter an IP address to scan: ")
+        ip_address = input("\nPlease enter an IP address to scan:\n")
 
         # Define the range of ports to scan
         port_range = [22, 23, 80, 443, 3389]
 
         # Get the source port number from user input
-        source_port = int(input("Enter source port number: "))
+        source_port = int(input("Enter source port number:\n"))
 
         # Scan each port in the specified range using a loop
         for port in port_range:
@@ -122,19 +123,23 @@ while True:
  
     # ICMP sweep    
     if user == "2":
+        print("Entering ICMP Scanner Mode\n")
         # Choices
-        reply = input("\n1. IP\n2. Host\n3. Network\n4. Exit \n\n")
+        reply = input("1. IP\n2. Host\n3. Network\n4. Exit \n\n")
         # IP - IP of the place you want to scan
         if reply == "1":
-            ip = input("Please type an IP address: ")
+            print("Selected- IP")
+            ip = input("\nPlease type an IP address:\n")
             IPsweep(ip)
         # Host - Host name
+        print("Selected- Host")
         if reply == "2":
-            host = input("Please type host name: ")
+            host = input("\nPlease type host name:\n")
             Hostsweep(host)
         # Nework - CIDR Block  
         if reply == "3": 
-            IPnetwork = input("Please type a IP w/ CIDR: ")
+            print("Selected- Network")
+            IPnetwork = input("\nPlease type a IP w/ CIDR:\n")
             sweep(IPnetwork)
 
         if user.lower() == "4":
