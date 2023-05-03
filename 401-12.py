@@ -99,7 +99,7 @@ while True:
         ip_address = input("\nPlease enter an IP address to scan:\n")
 
         # Define the range of ports to scan
-        port_range = [22, 23, 80, 443, 3389]
+        port_range = [21, 22, 23, 25, 53, 80, 110, 143, 443, 3389]
 
         # Get the source port number from user input
         source_port = int(input("Enter source port number:\n"))
