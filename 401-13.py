@@ -20,6 +20,9 @@ def port_scan(ip_address):
     # Get the source port number from user input
     source_port = int(input("Enter source port number:\n"))
 
+    # Add the source port number to the port range
+    port_range.append(source_port)
+
     # Scan each port in the specified range using a loop
     for port in port_range:
         # Send a SYN packet and wait for a response
