@@ -64,16 +64,6 @@ def ping_sweep(ip_address):
     else:
         print(f"\nNo response from {ip_address}\n")
 
-def get_mac_address(ip_address):
-    try:
-        mac_address = getmac.get_mac_address(ip=ip_address)
-        if mac_address is None:
-            return "MAC address not found"
-        else:
-            return mac_address
-    except:
-        return "Error getting MAC address"
-
 # User menu
 while True:
     # Get the IP address of the target host from user input
@@ -90,7 +80,6 @@ while True:
         pass
     print(f"IP address: {ip_address}")
     print(f"NetBIOS name: {ipaddress.IPv4Address(ip_address).reverse_pointer}")
-    print(f"MAC address: {get_mac_address(ip_address)}\n")
     
     # Prompt the user to continue or exit
     user_input = input("Press any key to continue scanning or 'q' to quit:\n")
