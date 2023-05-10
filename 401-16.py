@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Nick Aldereet
+# Nick Alderete
 # Worked with Geneva and Sierra
 # Sources: 
     # https://www.shiksha.com/online-courses/articles/validating-passwords-using-python-regex-match/
