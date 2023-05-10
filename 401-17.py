@@ -129,9 +129,9 @@ while True:
     print("2. Defensive; Password Recognized")
     print("3. Defensive; Password Complexity")
     print("4. Brute Force; SSH")
-    print("5. Exit")
+    print("5. Exit\n")
     
-    answer = input("Enter your selection (1-5): \n")
+    answer = input("Please enter your selection (1-5): \n")
     
     if answer == "1":
         mode1()
@@ -147,6 +147,7 @@ while True:
         break
     elif answer == "5":
         print("Exiting program...")
+        time.sleep(2)
         break
     else:
         print("Invalid mode selection. Please try again.")
