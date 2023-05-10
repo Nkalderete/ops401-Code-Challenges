@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Nick Alderete
-# Network Scanner
+# Network Scanner day 3
 # Worked with Sierra, Geneva and Justin H.
 #
 
