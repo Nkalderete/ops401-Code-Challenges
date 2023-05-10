@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Nick Alderete
-
+# Network Scanner day 1
 
 
 # Import necessary modules
