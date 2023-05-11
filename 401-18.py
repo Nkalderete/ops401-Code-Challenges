@@ -30,7 +30,7 @@ def mode1():
     # Ask user for wordlist file path
     filepath = input("Enter the file path of your dictionary:\n")
     
-    # Open the file and read each word
+    # Open the file and read each line
     with open(filepath) as file:
         for line in file:
             word = line.strip()
@@ -84,7 +84,8 @@ def mode3():
     else:
         symbol_check = False
     
-    # Print which password complexity metrics were satisfied
+    # Print which password complexity metrics were NOT satisfied
+    # Print if password meets requirements 
     if length_check and capital_check and number_check and symbol_check:
         print("SUCCESS! Password meets beefy requirements.")
     else:
@@ -166,7 +167,7 @@ def mode5():
 
 # User menu
 while True:
-    print("==MODE SELECTIONS==:")
+    print("==MODE SELECTIONS==")
     print("1. Offensive; Dictionary Iterator")
     print("2. Defensive; Password Recognition")
     print("3. Defensive; Password Complexity Checker")
