@@ -22,8 +22,8 @@ def ping_status(target):
             # Log successful ping
             logger.info(f"\nIP address: {target} \nStatus: {status}")
         else:
-            status = "Failed ping, check your IP address or network is down.\n"
-            print(f"{target} is not responding, try again later or check IP address.")
+            status = "Failed ping, verify your IP address and/ or network is down.\n"
+            print(f"{target} is not responding, try again later and/ or verify IP address.")
             # Log failed ping
             logger.warning(f"\nIP address: {target} \nStatus: {status}")
 
