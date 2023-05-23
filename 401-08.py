@@ -6,7 +6,7 @@
 # py -m pip install win32gui
 # py -m pip install pycrytodome
 
-
+ 
 
 from cryptography.fernet import Fernet
 import os 
