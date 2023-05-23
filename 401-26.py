@@ -2,47 +2,54 @@
 # Nick Alderete
 
 
+
+import logging
 import os
 import datetime
 import time
-import logging
 
 
 
 
-# Prompt user for target IP address
-target = input("Enter the target IP address: ")
+target = input("Enter the target IP address: \n")
+
+
+def ping_status(target):
+    try:
+        # Evaluate the response and assign success or failure to the status 
+        icmp = os.system("ping -c 1 " + target)
+        if icmp == 0:
+            status = "Successful ping."
+            print(f"{target} is up and responding.")
+        else:
+            status = "Failed ping, check your IP address or network is down."
+            print(f"{target} is not responding, try again later or check IP address.")
+        
+        # Get the current timestamp and print the status and timestamp
+        current_time = datetime.datetime.now()
+        print(f"{current_time} - Status: {status}")
+        return status
+    except Exception as e:
+        logging.exception("An error occurred")
+        raise e
 
 # Create and configure logger
 logging.basicConfig(filename="Demo.log", format='%(asctime)s %(message)s', filemode='w')
+
+# Create object
 logger = logging.getLogger()
+
+# Setting the threshold
 logger.setLevel(logging.DEBUG)
 
-# Add console handler to print log messages to the console
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-logger.addHandler(console_handler)
-
-# Log different log levels
-logger.debug("DEBUGGING\n")
-logger.info("INFORMATIONAL\n")
-logger.warning("WARNING\n")
-logger.error("ERROR\n")
-logger.critical("!!CRITICAL!!\n")
-
 while True:
-    # Perform a single ping packet to the target
-    response = os.system("ping -c 1 " + target)
-
-    # Evaluate the response and assign success or failure to the status variable
-    if response == 0:
-        status = "Success"
-    else:
-        status = "Failure"
-
-    # Get the current timestamp and print the status and timestamp
-    current_time = datetime.datetime.now()
-    print(f"{current_time} - Status: {status}")
-
-    # Wait for 2 seconds before transmitting another ping packet
-    time.sleep(2)
+    try:
+        # Transmit a single ICMP ping packet to the target
+        ping_status(target)
+        time.sleep(2)
+        
+    except KeyboardInterrupt:
+        break
+    
+    except Exception as e:
+        logging.exception("An error occurred")
