@@ -8,7 +8,7 @@ import datetime
 import time
 # from datetime import datetime
 
-target = "8.8.8.8"
+target = input("Enter target IP address: \n")
 
 while True:
     # Preform a single ping packet to the target
