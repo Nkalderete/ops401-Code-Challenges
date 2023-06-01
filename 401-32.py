@@ -29,6 +29,7 @@ def scan_directory(path):
                 print("--------------------\n")
                 
                 # Write file info to DirScan file that was created
+                f.write("--------------------")
                 f.write("File Name: " + file + "\n")
                 f.write("Timestamp: " + timestamp + "\n")
                 f.write("File Size: " + str(file_size) + " bytes\n")
