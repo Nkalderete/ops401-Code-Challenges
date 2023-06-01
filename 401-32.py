@@ -20,6 +20,7 @@ def scan_directory(path):
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 
                 # Print files to screen 
+                print("--------------------")
                 print("File Name:", file)
                 print("Timestamp:", timestamp)
                 print("File Size:", file_size, "bytes")
@@ -43,5 +44,5 @@ def generate_md5_hash(file_path):
         return md5_hash
 
 # Send it
-directory_path = input("Enter the directory path to scan: ")
+directory_path = input("Enter the directory path to scan: \n")
 scan_directory(directory_path)
