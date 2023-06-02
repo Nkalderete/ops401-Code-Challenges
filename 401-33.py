@@ -89,7 +89,7 @@ if search_result:
     # Print and write file details
     print(f"\nFiles found in given directory: {search_directory}:\n")
     time.sleep(1)
-    output_file.write(f"\n== Files found in given directory: {search_directory} ==\n")
+    output_file.write(f"\n== Files found inside directory path: {search_directory} ==\n")
 
     for file_path in search_result:
         file_hash = calculate_hash(file_path)
