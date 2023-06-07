@@ -1,14 +1,9 @@
 #!/usr/bin/python3
 # Nick Alderete
-# 
-
-
-
+# Web Application Fingerprinting
 
 
 import subprocess
-
-
 
 
 def banner_grabbing(target, port, grab_type):
